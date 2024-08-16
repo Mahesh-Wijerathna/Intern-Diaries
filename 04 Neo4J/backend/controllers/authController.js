@@ -18,6 +18,7 @@ exports.signup = async (req, res) => {
 
 exports.login = async (req, res) => {
   const { username, password } = req.body;
+  
   try {
     const userRecord = await User.findByUsername(username);
     if (!userRecord) {

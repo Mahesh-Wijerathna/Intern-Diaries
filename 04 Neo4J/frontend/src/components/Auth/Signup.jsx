@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 function Signup() {
@@ -8,9 +8,10 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/auth/signup', { username, password });
+      await axios.post('http://localhost:5000/api/auth/signup', { username, password });
       alert('Signup successful');
     } catch (error) {
+      console.log(error);
       alert('Signup failed');
     }
   };
